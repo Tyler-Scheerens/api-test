@@ -1,0 +1,11 @@
+{
+  "_meta": {
+    "sources": [
+      "../common/models"
+    ]
+  },
+  "Test": {
+    "dataSource": "mongodb_dev",
+    "public": true
+  }
+}
