@@ -2,22 +2,30 @@
 
 angular
   .module('apiTestApp', [
-    'ui.router'
+    'ui.router',
+    'ui.grid',
+    'ui.grid.resizeColumns',
+    'dndLists'
   ])
 
   .config([
     '$stateProvider', '$urlRouterProvider', '$locationProvider',
-    function angularConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+    function appConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       $stateProvider
         .state('home', {
           url: '/',
-          templateUrl: 'app/components/home/home.html',
+          templateUrl: 'app/components/home/homeView.html',
           controller: 'homeController'
         })
         .state('tests', {
           url: '/tests',
-          templateUrl: 'app/components/tests/tests.html',
+          templateUrl: 'app/components/tests/testsView.html',
           controller: 'testsController'
+        })
+        .state('servers', {
+          url: '/servers',
+          templateUrl: 'app/components/servers/serversView.html',
+          controller: 'serversController'
         });
 
       $urlRouterProvider.otherwise('/');

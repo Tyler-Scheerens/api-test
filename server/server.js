@@ -4,6 +4,8 @@ const loopback = require('loopback');
 const boot = require('loopback-boot');
 
 const app = loopback();
+// disable etag for requests
+app.set('etag', false);
 
 app.start = function serverStart() {
   // start the web server
